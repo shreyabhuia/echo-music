@@ -1,0 +1,13 @@
+# Build outputs
+/echo_server
+/echo_server.exe
+# Personal/demo persisted data
+/data/state.json
+/data/state.json.tmp
+# Uploaded personal audio
+/media/user_*
+# Python test harness cache (no Python runtime for backend)
+__pycache__/
+*.pyc
+# Local-only: keep bundled test WAVs out of git if you prefer
+# /media/*.wav

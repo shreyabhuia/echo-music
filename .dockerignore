@@ -1,0 +1,7 @@
+.git
+media
+data
+tests
+*.md
+echo_server
+echo_server.exe

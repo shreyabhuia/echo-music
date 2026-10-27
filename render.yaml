@@ -1,0 +1,18 @@
+# Render Blueprint: New + > Blueprint > pick your GitHub repo.
+services:
+  - type: web
+    name: echo-music
+    runtime: docker
+    plan: starter            # persistent disks need a paid plan; free plans lose files on every restart
+    healthCheckPath: /api/health
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: STORAGE_DIR
+        value: /var/data
+      - key: CORS_ORIGIN     # your Vercel URL, e.g. https://echo-music.vercel.app (only needed if you use Vercel)
+        sync: false
+    disk:
+      name: echo-data
+      mountPath: /var/data
+      sizeGB: 5
